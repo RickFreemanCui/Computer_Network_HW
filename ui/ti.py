@@ -1,11 +1,11 @@
 # ti.py text interface, used for debugging
 
-from scapy.all import *
 from .base_ui import base_ui
 
 
 class Ti(base_ui):
     def __init__(self):
+        super().__init__()
         print('Welcome to packet injector')
         self.config = dict()
         self.info = list()

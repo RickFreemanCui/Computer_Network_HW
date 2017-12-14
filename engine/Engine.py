@@ -12,6 +12,7 @@ class Engine(object):
         
 
     def updateInfo(self, info):
+        self.initPacket()
         for layer in info:
             # layer should be a dict {'type': Type of layer protocol, should be a scapy layer type,
             #                         'info': dict containing key: value pairs of info
