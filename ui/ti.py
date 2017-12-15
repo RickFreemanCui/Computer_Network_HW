@@ -27,7 +27,7 @@ class Ti(base_ui):
         print('rewriting info!')
         self.info = list()
         L2_proto = input('Choose L2 protocol (Ethernet): ')
-        if L2_proto == 'Ether':
+        if L2_proto == 'Ether' or L2_proto == 'ether':
             src = input('Choose src mac addr: ')
             dst = input('Choose dst mac addr: ')
             self.info.append({'type': Ether, 'info': {'src': src, 'dst': dst}})
@@ -35,7 +35,7 @@ class Ti(base_ui):
             print('sorry, only ethernet is supported now, assuming L2 to be ethernet')
             self.info.append({'type': Ether, 'info': dict()})
         L3_proto = input('Choose L3 protocol (IP): ')
-        if L3_proto == 'IP':
+        if L3_proto == 'IP' or L3_proto == 'ip':
             src = input('choose src IP addr: ')
             dst = input('choose dst IP addr: ')
             version = int(input('choose IP version (4 or 6): '))
@@ -53,7 +53,7 @@ class Ti(base_ui):
             print('sorry, only IP is supported now, assuming L3 to be IP')
             self.info.append({'type': IP, 'info': dict()})
         L4_proto = input('choose transport protocol (TCP):')
-        if L4_proto == 'TCP':
+        if L4_proto == 'TCP' or L4_proto == 'tcp':
             src_port = int(input('choose src port: '))
             dst_port = int(input('choose dst port: '))
             seq = int(input('choose sequencial number: '))
