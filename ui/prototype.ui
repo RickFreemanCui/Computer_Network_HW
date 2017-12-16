@@ -24,9 +24,6 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_9">
-       <item row="2" column="0" colspan="3">
-        <widget class="QListView" name="listViewPacketStack"/>
-       </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="pushButtonSend">
          <property name="text">
@@ -47,6 +44,9 @@
           <string>Delete Packet</string>
          </property>
         </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QListWidget" name="listWidgetPacketList"/>
        </item>
       </layout>
      </widget>
@@ -95,13 +95,40 @@
                 <widget class="QLineEdit" name="lineEditEtherType"/>
                </item>
                <item row="4" column="2">
-                <widget class="QComboBox" name="comboBoxEtherDst"/>
+                <widget class="QComboBox" name="comboBoxEtherDst">
+                 <item>
+                  <property name="text">
+                   <string>Boardcast</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="4" column="1">
                 <widget class="QLineEdit" name="lineEditEtherDst"/>
                </item>
                <item row="5" column="2">
-                <widget class="QComboBox" name="comboBoxEtherType"/>
+                <widget class="QComboBox" name="comboBoxEtherType">
+                 <item>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ARP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="4" column="0">
                 <widget class="QLabel" name="label_2">
@@ -121,7 +148,18 @@
                 <widget class="QLineEdit" name="lineEditEtherSrc"/>
                </item>
                <item row="3" column="2">
-                <widget class="QComboBox" name="comboBoxEtherSrc"/>
+                <widget class="QComboBox" name="comboBoxEtherSrc">
+                 <item>
+                  <property name="text">
+                   <string>Local</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QLabel" name="label">
@@ -171,7 +209,7 @@
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tabICMP">
           <attribute name="title">
@@ -190,7 +228,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-44</y>
+                <y>0</y>
                 <width>539</width>
                 <height>403</height>
                </rect>
@@ -258,7 +296,28 @@
                 <widget class="QLineEdit" name="lineEditICMPCode"/>
                </item>
                <item row="1" column="2">
-                <widget class="QComboBox" name="comboBoxICMPType"/>
+                <widget class="QComboBox" name="comboBoxICMPType">
+                 <item>
+                  <property name="text">
+                   <string>echo-reply (0)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>destination-unreachable (3)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>source-quench (4)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>redirect (5)</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="3" column="2">
                 <widget class="QComboBox" name="comboBoxICMPCode"/>
@@ -288,7 +347,18 @@
                 </widget>
                </item>
                <item row="4" column="2">
-                <widget class="QComboBox" name="comboBoxICMPChksum"/>
+                <widget class="QComboBox" name="comboBoxICMPChksum">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="5" column="1">
                 <widget class="QLineEdit" name="lineEditICMPId"/>
@@ -412,9 +482,9 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-194</y>
                 <width>539</width>
-                <height>347</height>
+                <height>361</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_6">
@@ -439,7 +509,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="9" column="0">
+               <item row="10" column="0">
                 <widget class="QLabel" name="label_36">
                  <property name="text">
                   <string>Flags</string>
@@ -467,7 +537,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="11" column="3">
+               <item row="12" column="3">
                 <widget class="QLineEdit" name="lineEditTCPChksum"/>
                </item>
                <item row="0" column="3">
@@ -480,17 +550,17 @@
                <item row="2" column="3">
                 <widget class="QLineEdit" name="lineEditTCPDport"/>
                </item>
-               <item row="12" column="3">
+               <item row="13" column="3">
                 <widget class="QLineEdit" name="lineEditTCPUrgptr"/>
                </item>
-               <item row="12" column="0">
+               <item row="13" column="0">
                 <widget class="QLabel" name="label_39">
                  <property name="text">
                   <string>Urgent Pointer</string>
                  </property>
                 </widget>
                </item>
-               <item row="10" column="0">
+               <item row="11" column="0">
                 <widget class="QLabel" name="label_35">
                  <property name="text">
                   <string>Window Size</string>
@@ -500,7 +570,7 @@
                <item row="3" column="3">
                 <widget class="QLineEdit" name="lineEditTCPSeq"/>
                </item>
-               <item row="11" column="0">
+               <item row="12" column="0">
                 <widget class="QLabel" name="label_34">
                  <property name="text">
                   <string>Checksum</string>
@@ -510,10 +580,10 @@
                <item row="8" column="3">
                 <widget class="QLineEdit" name="lineEditTCPReserved"/>
                </item>
-               <item row="9" column="3">
+               <item row="10" column="3">
                 <widget class="QLineEdit" name="lineEditTCPFlags"/>
                </item>
-               <item row="10" column="3">
+               <item row="11" column="3">
                 <widget class="QLineEdit" name="lineEditTCPWindow"/>
                </item>
                <item row="0" column="0">
@@ -523,13 +593,13 @@
                  </property>
                 </widget>
                </item>
-               <item row="13" column="3">
+               <item row="14" column="3">
                 <widget class="QLineEdit" name="lineEditTCPOptions"/>
                </item>
                <item row="4" column="3">
                 <widget class="QLineEdit" name="lineEditTCPAck"/>
                </item>
-               <item row="13" column="0">
+               <item row="14" column="0">
                 <widget class="QLabel" name="label_38">
                  <property name="text">
                   <string>Options</string>
@@ -542,6 +612,61 @@
                <item row="1" column="3">
                 <widget class="QLineEdit" name="lineEditTCPSport"/>
                </item>
+               <item row="1" column="4">
+                <widget class="QComboBox" name="comboBoxTCPSport">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="4" column="4">
+                <widget class="QComboBox" name="comboBoxTCPAck">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="7" column="4">
+                <widget class="QComboBox" name="comboBoxTCPDataofs">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="8" column="4">
+                <widget class="QComboBox" name="comboBoxTCPReserved">
+                 <item>
+                  <property name="text">
+                   <string>None</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QComboBox" name="comboBoxTCPDport">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
                <item row="0" column="4">
                 <widget class="QLabel" name="label_54">
                  <property name="text">
@@ -549,38 +674,60 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
-                <widget class="QComboBox" name="comboBoxTCPSport"/>
-               </item>
                <item row="3" column="4">
-                <widget class="QComboBox" name="comboBoxTCPSeq"/>
-               </item>
-               <item row="2" column="4">
-                <widget class="QComboBox" name="comboBoxTCPDport"/>
-               </item>
-               <item row="4" column="4">
-                <widget class="QComboBox" name="comboBoxTCPAck"/>
-               </item>
-               <item row="7" column="4">
-                <widget class="QComboBox" name="comboBoxTCPDataofs"/>
-               </item>
-               <item row="8" column="4">
-                <widget class="QComboBox" name="comboBoxTCPReserved"/>
-               </item>
-               <item row="9" column="4">
-                <widget class="QComboBox" name="comboBoxTCPFlags"/>
-               </item>
-               <item row="10" column="4">
-                <widget class="QComboBox" name="comboBoxTCPWindow"/>
-               </item>
-               <item row="11" column="4">
-                <widget class="QComboBox" name="comboBoxTCPChksum"/>
+                <widget class="QComboBox" name="comboBoxTCPSeq">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="12" column="4">
-                <widget class="QComboBox" name="comboBoxTCPUrgptr"/>
+                <widget class="QComboBox" name="comboBoxTCPChksum">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="11" column="4">
+                <widget class="QComboBox" name="comboBoxTCPWindow">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="13" column="4">
-                <widget class="QComboBox" name="comboBoxTCPOptions"/>
+                <widget class="QComboBox" name="comboBoxTCPUrgptr">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="10" column="4">
+                <widget class="QPushButton" name="pushButtonEditTCPFlag">
+                 <property name="text">
+                  <string>Edit</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="4">
+                <widget class="QPushButton" name="pushButtonEditTCPOptions">
+                 <property name="text">
+                  <string>Edit</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -633,13 +780,35 @@
                 </widget>
                </item>
                <item row="7" column="2">
-                <widget class="QComboBox" name="comboBoxUDPLen"/>
+                <widget class="QComboBox" name="comboBoxUDPLen">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="8" column="1">
                 <widget class="QLineEdit" name="lineEditUDPChksum"/>
                </item>
                <item row="8" column="2">
-                <widget class="QComboBox" name="comboBoxUDPChksum"/>
+                <widget class="QComboBox" name="comboBoxUDPChksum">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="4" column="1">
                 <widget class="QLineEdit" name="lineEditUDPSport"/>
@@ -648,7 +817,13 @@
                 <widget class="QLineEdit" name="lineEditUDPLen"/>
                </item>
                <item row="6" column="2">
-                <widget class="QComboBox" name="comboBoxUDPDport"/>
+                <widget class="QComboBox" name="comboBoxUDPDport">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="label_40">
@@ -658,7 +833,13 @@
                 </widget>
                </item>
                <item row="4" column="2">
-                <widget class="QComboBox" name="comboBoxUDPSport"/>
+                <widget class="QComboBox" name="comboBoxUDPSport">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_51">
@@ -704,7 +885,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tabARP">
           <attribute name="title">
@@ -723,14 +904,25 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-80</y>
                 <width>539</width>
                 <height>328</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
                <item row="7" column="2">
-                <widget class="QComboBox" name="comboBoxARPPsrc"/>
+                <widget class="QComboBox" name="comboBoxARPPsrc">
+                 <item>
+                  <property name="text">
+                   <string>Local</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="lineEditARPHwlen"/>
@@ -745,10 +937,32 @@
                 <widget class="QLineEdit" name="lineEditARPPdst"/>
                </item>
                <item row="9" column="2">
-                <widget class="QComboBox" name="comboBoxARPPdst"/>
+                <widget class="QComboBox" name="comboBoxARPPdst">
+                 <item>
+                  <property name="text">
+                   <string>Broadcast</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="8" column="2">
-                <widget class="QComboBox" name="comboBoxARPHwdst"/>
+                <widget class="QComboBox" name="comboBoxARPHwdst">
+                 <item>
+                  <property name="text">
+                   <string>Broadcast</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="6" column="1">
                 <widget class="QLineEdit" name="lineEditARPHwsrc"/>
@@ -779,22 +993,93 @@
                 <widget class="QLineEdit" name="lineEditARPPsrc"/>
                </item>
                <item row="2" column="2">
-                <widget class="QComboBox" name="comboBoxARPPtype"/>
+                <widget class="QComboBox" name="comboBoxARPPtype">
+                 <item>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="6" column="2">
-                <widget class="QComboBox" name="comboBoxARPHwsrc"/>
+                <widget class="QComboBox" name="comboBoxARPHwsrc">
+                 <item>
+                  <property name="text">
+                   <string>Local</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="5" column="2">
-                <widget class="QComboBox" name="comboBoxARPOp"/>
+                <widget class="QComboBox" name="comboBoxARPOp">
+                 <item>
+                  <property name="text">
+                   <string>who-has</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>is-at</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="4" column="2">
-                <widget class="QComboBox" name="comboBoxARPPlen"/>
+                <widget class="QComboBox" name="comboBoxARPPlen">
+                 <item>
+                  <property name="text">
+                   <string>IP (4)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="3" column="2">
-                <widget class="QComboBox" name="comboBoxARPHwlen"/>
+                <widget class="QComboBox" name="comboBoxARPHwlen">
+                 <item>
+                  <property name="text">
+                   <string>Ethernet (6)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="1" column="2">
-                <widget class="QComboBox" name="comboBoxARPHwtype"/>
+                <widget class="QComboBox" name="comboBoxARPHwtype">
+                 <item>
+                  <property name="text">
+                   <string>Ethernet</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_9">
@@ -893,7 +1178,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-84</y>
+                <y>0</y>
                 <width>539</width>
                 <height>375</height>
                </rect>
@@ -907,7 +1192,18 @@
                 </widget>
                </item>
                <item row="14" column="2">
-                <widget class="QComboBox" name="comboBoxIPChecksum"/>
+                <widget class="QComboBox" name="comboBoxIPChecksum">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="lineEditIPVersion"/>
@@ -981,7 +1277,18 @@
                 <widget class="QLineEdit" name="lineEditIPTtl"/>
                </item>
                <item row="16" column="2">
-                <widget class="QComboBox" name="comboBoxIPDst"/>
+                <widget class="QComboBox" name="comboBoxIPDst">
+                 <item>
+                  <property name="text">
+                   <string>Broadcast</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="9" column="1">
                 <widget class="QLineEdit" name="lineEditIPFragment"/>
@@ -1040,19 +1347,79 @@
                 <widget class="QLineEdit" name="lineEditIPIhl"/>
                </item>
                <item row="6" column="2">
-                <widget class="QComboBox" name="comboBoxIPFlags"/>
+                <widget class="QComboBox" name="comboBoxIPFlags">
+                 <item>
+                  <property name="text">
+                   <string>DF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>MF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>DF+MF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>None</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="15" column="2">
-                <widget class="QComboBox" name="comboBoxIPSrc"/>
+                <widget class="QComboBox" name="comboBoxIPSrc">
+                 <item>
+                  <property name="text">
+                   <string>Local</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="1" column="2">
-                <widget class="QComboBox" name="comboBoxIPVersion"/>
+                <widget class="QComboBox" name="comboBoxIPVersion">
+                 <item>
+                  <property name="text">
+                   <string>IPv4 (4)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="9" column="2">
-                <widget class="QComboBox" name="comboBoxIPFragment"/>
+                <widget class="QComboBox" name="comboBoxIPFragment">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="2" column="2">
-                <widget class="QComboBox" name="comboBoxIPIhl"/>
+                <widget class="QComboBox" name="comboBoxIPIhl">
+                 <item>
+                  <property name="text">
+                   <string>No Options (5)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_45">
@@ -1062,19 +1429,79 @@
                 </widget>
                </item>
                <item row="10" column="2">
-                <widget class="QComboBox" name="comboBoxIPTtl"/>
+                <widget class="QComboBox" name="comboBoxIPTtl">
+                 <item>
+                  <property name="text">
+                   <string>Initial (64)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="12" column="2">
-                <widget class="QComboBox" name="comboBoxIPProto"/>
+                <widget class="QComboBox" name="comboBoxIPProto">
+                 <item>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>TCP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>UDP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ICMP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="3" column="2">
-                <widget class="QComboBox" name="comboBoxIPTos"/>
+                <widget class="QComboBox" name="comboBoxIPTos">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="4" column="2">
-                <widget class="QComboBox" name="comboBoxIPLength"/>
+                <widget class="QComboBox" name="comboBoxIPLength">
+                 <item>
+                  <property name="text">
+                   <string>Auto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item row="5" column="2">
-                <widget class="QComboBox" name="comboBoxIPId"/>
+                <widget class="QComboBox" name="comboBoxIPId">
+                 <item>
+                  <property name="text">
+                   <string>Custom</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -1088,7 +1515,19 @@
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="QTextBrowser" name="textBrowserHexdump"/>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="0">
+        <widget class="QTextBrowser" name="textBrowserHexdump"/>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
