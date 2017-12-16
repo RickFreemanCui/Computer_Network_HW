@@ -2,762 +2,1082 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>800</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QFrame" name="frame">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="3">
+     <widget class="QFrame" name="frameControl">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QTabWidget" name="tabWidget">
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="2" column="0" colspan="3">
+        <widget class="QListView" name="listViewPacketStack"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="pushButtonSend">
+         <property name="text">
+          <string>Send</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButtonAddPacket">
+         <property name="text">
+          <string>Add Packet</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="pushButtonDeletePacket">
+         <property name="text">
+          <string>Delete Packet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QFrame" name="frameOptions">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <widget class="QTabWidget" name="tabWidgetEther">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>170</height>
+          </size>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="tab">
+         <widget class="QWidget" name="tabEther">
           <attribute name="title">
            <string>Ethernet</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QFrame" name="frame_4">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+            <widget class="QScrollArea" name="scrollArea">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QLabel" name="label_40">
-                <property name="text">
-                 <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>Source MAC Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>Destination MAC Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>Protocol</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_5">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
-              <item>
-               <widget class="QLabel" name="label_41">
-                <property name="text">
-                 <string>&lt;b&gt;Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_2"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_3"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_14">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_12">
-              <item>
-               <widget class="QLabel" name="label_42">
-                <property name="text">
-                 <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_3"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_2"/>
-              </item>
-             </layout>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>539</width>
+                <height>123</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lineEditEtherType"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="QComboBox" name="comboBoxEtherDst"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lineEditEtherDst"/>
+               </item>
+               <item row="5" column="2">
+                <widget class="QComboBox" name="comboBoxEtherType"/>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>Destination MAC Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>Protocol</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lineEditEtherSrc"/>
+               </item>
+               <item row="3" column="2">
+                <widget class="QComboBox" name="comboBoxEtherSrc"/>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>Source MAC Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_49">
+                 <property name="text">
+                  <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_41">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
          </widget>
         </widget>
        </item>
-       <item>
-        <widget class="QTabWidget" name="tabWidget_2">
+       <item row="2" column="0">
+        <widget class="QTabWidget" name="tabWidgetICMPTCPUDP">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="tab_3">
-          <attribute name="title">
-           <string>ARP</string>
-          </attribute>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QFrame" name="frame_6">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item>
-               <widget class="QLabel" name="label_46">
-                <property name="text">
-                 <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>Hardware Type</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>Protocol Type</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_12">
-                <property name="text">
-                 <string>Hardware Address Length</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>Protocol Address Length</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>Operation Type</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_10">
-                <property name="text">
-                 <string>Hardware Source Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_6">
-                <property name="text">
-                 <string>Protocol Source Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_7">
-                <property name="text">
-                 <string>Hardware Destination Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>Protocol Destination Address</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_7">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <item>
-               <widget class="QLabel" name="label_47">
-                <property name="text">
-                 <string>&lt;b&gt;Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_4"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_11"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_5"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_12"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_10"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_6"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_7"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_8"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_9"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_16">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_14">
-              <item>
-               <widget class="QLabel" name="label_48">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>54</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_24"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_23"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_22"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_21"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_20"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_17"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_16"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_19"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_18"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="tab_4">
-          <attribute name="title">
-           <string>IP</string>
-          </attribute>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QFrame" name="frame_8">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
-              <item>
-               <widget class="QLabel" name="label_43">
-                <property name="text">
-                 <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_13">
-                <property name="text">
-                 <string>IP Version</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_14">
-                <property name="text">
-                 <string>IP header length (in 4 bytes)</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_15">
-                <property name="text">
-                 <string>Type of Service (unused)</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_16">
-                <property name="text">
-                 <string>IP Datagram Length</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_17">
-                <property name="text">
-                 <string>ID</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_18">
-                <property name="text">
-                 <string>flags</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_19">
-                <property name="text">
-                 <string>Fragment</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_20">
-                <property name="text">
-                 <string>Time To Live</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_21">
-                <property name="text">
-                 <string>Protocol</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_22">
-                <property name="text">
-                 <string>Checksum</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_24">
-                <property name="text">
-                 <string>Source IP Address</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_23">
-                <property name="text">
-                 <string>Destination IP Address</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_9">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_7">
-              <item>
-               <widget class="QLabel" name="label_44">
-                <property name="text">
-                 <string>&lt;b&gt;Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_13"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_14"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_15"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_16"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_17"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_18"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_19"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_20"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_24"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_23"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_22"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_21"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_15">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_13">
-              <item>
-               <widget class="QLabel" name="label_45">
-                <property name="text">
-                 <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_14"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_13"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_15"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_12"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_11"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_4"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_10"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_9"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_8"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_7"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_6"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="comboBox_5"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTabWidget" name="tabWidget_3">
-         <property name="currentIndex">
-          <number>2</number>
-         </property>
-         <widget class="QWidget" name="tab_5">
+         <widget class="QWidget" name="tabICMP">
           <attribute name="title">
            <string>ICMP</string>
           </attribute>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QScrollArea" name="scrollArea_6">
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAsNeeded</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_6">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>-44</y>
+                <width>539</width>
+                <height>403</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_11">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetMinimumSize</enum>
+               </property>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_55">
+                 <property name="text">
+                  <string>Checksum</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_56">
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_61">
+                 <property name="text">
+                  <string>Timestamp Receive</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_57">
+                 <property name="text">
+                  <string>Sequential Number</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_60">
+                 <property name="text">
+                  <string>Timestamp Originate</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="label_62">
+                 <property name="text">
+                  <string>Timestamp Transmit</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="lineEditICMPSeq"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lineEditICMPChksum"/>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="label_63">
+                 <property name="text">
+                  <string>Gateway</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lineEditICMPCode"/>
+               </item>
+               <item row="1" column="2">
+                <widget class="QComboBox" name="comboBoxICMPType"/>
+               </item>
+               <item row="3" column="2">
+                <widget class="QComboBox" name="comboBoxICMPCode"/>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lineEditICMPType"/>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="label_64">
+                 <property name="text">
+                  <string>Pointer</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_58">
+                 <property name="text">
+                  <string>Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_59">
+                 <property name="text">
+                  <string>Code</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QComboBox" name="comboBoxICMPChksum"/>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lineEditICMPId"/>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="lineEditICMPTs_ori"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_65">
+                 <property name="text">
+                  <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="1">
+                <widget class="QLineEdit" name="lineEditICMPPtr"/>
+               </item>
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="lineEditICMPTs_rx"/>
+               </item>
+               <item row="7" column="2">
+                <widget class="QComboBox" name="comboBoxICMPTs_ori"/>
+               </item>
+               <item row="9" column="1">
+                <widget class="QLineEdit" name="lineEditICMPTs_tx"/>
+               </item>
+               <item row="10" column="1">
+                <widget class="QLineEdit" name="lineEditICMPGw"/>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_66">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="comboBoxICMPSeq"/>
+               </item>
+               <item row="5" column="2">
+                <widget class="QComboBox" name="comboBoxICMPId"/>
+               </item>
+               <item row="9" column="2">
+                <widget class="QComboBox" name="comboBoxICMPTs_tx"/>
+               </item>
+               <item row="8" column="2">
+                <widget class="QComboBox" name="comboBoxICMPTs_rx"/>
+               </item>
+               <item row="10" column="2">
+                <widget class="QComboBox" name="comboBoxICMPGw"/>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_67">
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="2">
+                <widget class="QComboBox" name="comboBoxICMPPtr"/>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLabel" name="label_69">
+                 <property name="text">
+                  <string>Address Mask</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="label_68">
+                 <property name="text">
+                  <string>Reserved</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="0">
+                <widget class="QLabel" name="label_70">
+                 <property name="text">
+                  <string>Unused</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="1">
+                <widget class="QLineEdit" name="lineEditICMPReserved"/>
+               </item>
+               <item row="13" column="1">
+                <widget class="QLineEdit" name="lineEditICMPAddr_mask"/>
+               </item>
+               <item row="14" column="1">
+                <widget class="QLineEdit" name="lineEditICMPUnused"/>
+               </item>
+               <item row="12" column="2">
+                <widget class="QComboBox" name="comboBoxICMPReserved"/>
+               </item>
+               <item row="13" column="2">
+                <widget class="QComboBox" name="comboBoxICMPAddr_mask"/>
+               </item>
+               <item row="14" column="2">
+                <widget class="QComboBox" name="comboBoxICMPUnused"/>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
-         <widget class="QWidget" name="tab_6">
+         <widget class="QWidget" name="tabTCP">
           <attribute name="title">
            <string>TCP</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
-            <widget class="QFrame" name="frame_12">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+            <widget class="QScrollArea" name="scrollArea_5">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_10">
-              <item>
-               <widget class="QLabel" name="label_29">
-                <property name="text">
-                 <string>Source Port</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_30">
-                <property name="text">
-                 <string>Destination Port</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_31">
-                <property name="text">
-                 <string>Sequential Number</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_32">
-                <property name="text">
-                 <string>Acknowledge Number</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_33">
-                <property name="text">
-                 <string>Data Offset</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_37">
-                <property name="text">
-                 <string>Reserved</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_36">
-                <property name="text">
-                 <string>Flags</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_35">
-                <property name="text">
-                 <string>Window Size</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_34">
-                <property name="text">
-                 <string>Checksum</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_39">
-                <property name="text">
-                 <string>Urgent Pointer</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_38">
-                <property name="text">
-                 <string>Options</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_13">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_11">
-              <item>
-               <widget class="QLineEdit" name="lineEdit_30"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_31"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_32"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_33"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_29"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_34"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_35"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_38"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_36"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_39"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_37"/>
-              </item>
-             </layout>
+             <widget class="QWidget" name="scrollAreaWidgetContents_5">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>539</width>
+                <height>347</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_29">
+                 <property name="text">
+                  <string>Source Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_32">
+                 <property name="text">
+                  <string>Acknowledge Number</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_33">
+                 <property name="text">
+                  <string>Data Offset</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="label_36">
+                 <property name="text">
+                  <string>Flags</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_31">
+                 <property name="text">
+                  <string>Sequential Number</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_37">
+                 <property name="text">
+                  <string>Reserved</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_30">
+                 <property name="text">
+                  <string>Destination Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="3">
+                <widget class="QLineEdit" name="lineEditTCPChksum"/>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_53">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLineEdit" name="lineEditTCPDport"/>
+               </item>
+               <item row="12" column="3">
+                <widget class="QLineEdit" name="lineEditTCPUrgptr"/>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="label_39">
+                 <property name="text">
+                  <string>Urgent Pointer</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="label_35">
+                 <property name="text">
+                  <string>Window Size</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="QLineEdit" name="lineEditTCPSeq"/>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="label_34">
+                 <property name="text">
+                  <string>Checksum</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="3">
+                <widget class="QLineEdit" name="lineEditTCPReserved"/>
+               </item>
+               <item row="9" column="3">
+                <widget class="QLineEdit" name="lineEditTCPFlags"/>
+               </item>
+               <item row="10" column="3">
+                <widget class="QLineEdit" name="lineEditTCPWindow"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_52">
+                 <property name="text">
+                  <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="3">
+                <widget class="QLineEdit" name="lineEditTCPOptions"/>
+               </item>
+               <item row="4" column="3">
+                <widget class="QLineEdit" name="lineEditTCPAck"/>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLabel" name="label_38">
+                 <property name="text">
+                  <string>Options</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="3">
+                <widget class="QLineEdit" name="lineEditTCPDataofs"/>
+               </item>
+               <item row="1" column="3">
+                <widget class="QLineEdit" name="lineEditTCPSport"/>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLabel" name="label_54">
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/bcombo&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QComboBox" name="comboBoxTCPSport"/>
+               </item>
+               <item row="3" column="4">
+                <widget class="QComboBox" name="comboBoxTCPSeq"/>
+               </item>
+               <item row="2" column="4">
+                <widget class="QComboBox" name="comboBoxTCPDport"/>
+               </item>
+               <item row="4" column="4">
+                <widget class="QComboBox" name="comboBoxTCPAck"/>
+               </item>
+               <item row="7" column="4">
+                <widget class="QComboBox" name="comboBoxTCPDataofs"/>
+               </item>
+               <item row="8" column="4">
+                <widget class="QComboBox" name="comboBoxTCPReserved"/>
+               </item>
+               <item row="9" column="4">
+                <widget class="QComboBox" name="comboBoxTCPFlags"/>
+               </item>
+               <item row="10" column="4">
+                <widget class="QComboBox" name="comboBoxTCPWindow"/>
+               </item>
+               <item row="11" column="4">
+                <widget class="QComboBox" name="comboBoxTCPChksum"/>
+               </item>
+               <item row="12" column="4">
+                <widget class="QComboBox" name="comboBoxTCPUrgptr"/>
+               </item>
+               <item row="13" column="4">
+                <widget class="QComboBox" name="comboBoxTCPOptions"/>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tab_2">
+         <widget class="QWidget" name="tabUDP">
           <attribute name="title">
            <string>UDP</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <widget class="QFrame" name="frame_10">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+            <widget class="QScrollArea" name="scrollArea_4">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_9">
-              <item>
-               <widget class="QLabel" name="label_25">
-                <property name="text">
-                 <string>Source Port</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_27">
-                <property name="text">
-                 <string>Destination Port</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_28">
-                <property name="text">
-                 <string>Length</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_26">
-                <property name="text">
-                 <string>Checksum</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QWidget" name="scrollAreaWidgetContents_4">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>560</width>
+                <height>167</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_28">
+                 <property name="text">
+                  <string>Length</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_26">
+                 <property name="text">
+                  <string>Checksum</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="lineEditUDPDport"/>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_27">
+                 <property name="text">
+                  <string>Destination Port</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QComboBox" name="comboBoxUDPLen"/>
+               </item>
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="lineEditUDPChksum"/>
+               </item>
+               <item row="8" column="2">
+                <widget class="QComboBox" name="comboBoxUDPChksum"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lineEditUDPSport"/>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="lineEditUDPLen"/>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="comboBoxUDPDport"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_40">
+                 <property name="text">
+                  <string>&lt;b&gt;Field&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QComboBox" name="comboBoxUDPSport"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_51">
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="label_50">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_25">
+                 <property name="text">
+                  <string>Source Port</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTabWidget" name="tabWidgetARPIP">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tabARP">
+          <attribute name="title">
+           <string>ARP</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QFrame" name="frame_11">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+            <widget class="QScrollArea" name="scrollArea_3">
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAsNeeded</enum>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_8">
-              <item>
-               <widget class="QLineEdit" name="lineEdit_25"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_26"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_27"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_28"/>
-              </item>
-             </layout>
+             <widget class="QWidget" name="scrollAreaWidgetContents_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>539</width>
+                <height>328</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="7" column="2">
+                <widget class="QComboBox" name="comboBoxARPPsrc"/>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lineEditARPHwlen"/>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lineEditARPOp"/>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lineEditARPPtype"/>
+               </item>
+               <item row="9" column="1">
+                <widget class="QLineEdit" name="lineEditARPPdst"/>
+               </item>
+               <item row="9" column="2">
+                <widget class="QComboBox" name="comboBoxARPPdst"/>
+               </item>
+               <item row="8" column="2">
+                <widget class="QComboBox" name="comboBoxARPHwdst"/>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="lineEditARPHwsrc"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lineEditARPPlen"/>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_48">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>54</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lineEditARPHwtype"/>
+               </item>
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="lineEditARPHwdst"/>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="lineEditARPPsrc"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QComboBox" name="comboBoxARPPtype"/>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="comboBoxARPHwsrc"/>
+               </item>
+               <item row="5" column="2">
+                <widget class="QComboBox" name="comboBoxARPOp"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="QComboBox" name="comboBoxARPPlen"/>
+               </item>
+               <item row="3" column="2">
+                <widget class="QComboBox" name="comboBoxARPHwlen"/>
+               </item>
+               <item row="1" column="2">
+                <widget class="QComboBox" name="comboBoxARPHwtype"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Hardware Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>Protocol Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>Hardware Address Length</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_46">
+                 <property name="text">
+                  <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>Protocol Address Length</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Operation Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>Hardware Source Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_47">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>Hardware Destination Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>Protocol Destination Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Protocol Source Address</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabIP">
+          <attribute name="title">
+           <string>IP</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QScrollArea" name="scrollArea_2">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>-84</y>
+                <width>539</width>
+                <height>375</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_43">
+                 <property name="text">
+                  <string>&lt;b&gt;Field Name&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="2">
+                <widget class="QComboBox" name="comboBoxIPChecksum"/>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lineEditIPVersion"/>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>IP Datagram Length</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>IP header length (in 4 bytes)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>flags</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_15">
+                 <property name="text">
+                  <string>Type of Service (unused)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>IP Version</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="0">
+                <widget class="QLabel" name="label_24">
+                 <property name="text">
+                  <string>Source IP Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="1">
+                <widget class="QLineEdit" name="lineEditIPSrc"/>
+               </item>
+               <item row="14" column="1">
+                <widget class="QLineEdit" name="lineEditIPChecksum"/>
+               </item>
+               <item row="16" column="1">
+                <widget class="QLineEdit" name="lineEditIPDst"/>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_44">
+                 <property name="text">
+                  <string>&lt;b&gt;Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="1">
+                <widget class="QLineEdit" name="lineEditIPTtl"/>
+               </item>
+               <item row="16" column="2">
+                <widget class="QComboBox" name="comboBoxIPDst"/>
+               </item>
+               <item row="9" column="1">
+                <widget class="QLineEdit" name="lineEditIPFragment"/>
+               </item>
+               <item row="14" column="0">
+                <widget class="QLabel" name="label_22">
+                 <property name="text">
+                  <string>Checksum</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="1">
+                <widget class="QLineEdit" name="lineEditIPProto"/>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="lineEditIPFlags"/>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lineEditIPTos"/>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="label_20">
+                 <property name="text">
+                  <string>Time To Live</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="label_21">
+                 <property name="text">
+                  <string>Protocol</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lineEditIPId"/>
+               </item>
+               <item row="16" column="0">
+                <widget class="QLabel" name="label_23">
+                 <property name="text">
+                  <string>Destination IP Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lineEditIPLength"/>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>Fragment</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lineEditIPIhl"/>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="comboBoxIPFlags"/>
+               </item>
+               <item row="15" column="2">
+                <widget class="QComboBox" name="comboBoxIPSrc"/>
+               </item>
+               <item row="1" column="2">
+                <widget class="QComboBox" name="comboBoxIPVersion"/>
+               </item>
+               <item row="9" column="2">
+                <widget class="QComboBox" name="comboBoxIPFragment"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QComboBox" name="comboBoxIPIhl"/>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_45">
+                 <property name="text">
+                  <string>&lt;b&gt;Common Value&lt;/b&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="2">
+                <widget class="QComboBox" name="comboBoxIPTtl"/>
+               </item>
+               <item row="12" column="2">
+                <widget class="QComboBox" name="comboBoxIPProto"/>
+               </item>
+               <item row="3" column="2">
+                <widget class="QComboBox" name="comboBoxIPTos"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="QComboBox" name="comboBoxIPLength"/>
+               </item>
+               <item row="5" column="2">
+                <widget class="QComboBox" name="comboBoxIPId"/>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -767,25 +1087,8 @@
       </layout>
      </widget>
     </item>
-    <item>
-     <widget class="QFrame" name="frame_2">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QFrame" name="frame_3">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
+    <item row="0" column="2">
+     <widget class="QTextBrowser" name="textBrowserHexdump"/>
     </item>
    </layout>
   </widget>
@@ -794,7 +1097,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>785</width>
+     <width>1600</width>
      <height>26</height>
     </rect>
    </property>
