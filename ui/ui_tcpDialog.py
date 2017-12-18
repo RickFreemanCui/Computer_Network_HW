@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ui\tcpDialog.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(400, 300)
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setGeometry(QtCore.QRect(50, 20, 321, 191))
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout.setObjectName("gridLayout")
+        self.labelACK = QtWidgets.QLabel(self.frame)
+        self.labelACK.setObjectName("labelACK")
+        self.gridLayout.addWidget(self.labelACK, 2, 0, 1, 1)
+        self.labelPSH = QtWidgets.QLabel(self.frame)
+        self.labelPSH.setObjectName("labelPSH")
+        self.gridLayout.addWidget(self.labelPSH, 4, 0, 1, 1)
+        self.labelRST = QtWidgets.QLabel(self.frame)
+        self.labelRST.setObjectName("labelRST")
+        self.gridLayout.addWidget(self.labelRST, 6, 0, 1, 1)
+        self.labelURG = QtWidgets.QLabel(self.frame)
+        self.labelURG.setObjectName("labelURG")
+        self.gridLayout.addWidget(self.labelURG, 0, 0, 1, 1)
+        self.labelSYN = QtWidgets.QLabel(self.frame)
+        self.labelSYN.setObjectName("labelSYN")
+        self.gridLayout.addWidget(self.labelSYN, 8, 0, 1, 1)
+        self.labelFIN = QtWidgets.QLabel(self.frame)
+        self.labelFIN.setObjectName("labelFIN")
+        self.gridLayout.addWidget(self.labelFIN, 9, 0, 1, 1)
+        self.checkBoxPSH = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxPSH.setObjectName("checkBoxPSH")
+        self.gridLayout.addWidget(self.checkBoxPSH, 4, 1, 1, 1)
+        self.checkBoxSYN = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxSYN.setObjectName("checkBoxSYN")
+        self.gridLayout.addWidget(self.checkBoxSYN, 8, 1, 1, 1)
+        self.checkBoxFIN = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxFIN.setObjectName("checkBoxFIN")
+        self.gridLayout.addWidget(self.checkBoxFIN, 9, 1, 1, 1)
+        self.checkBoxRST = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxRST.setObjectName("checkBoxRST")
+        self.gridLayout.addWidget(self.checkBoxRST, 6, 1, 1, 1)
+        self.checkBoxACK = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxACK.setObjectName("checkBoxACK")
+        self.gridLayout.addWidget(self.checkBoxACK, 2, 1, 1, 1)
+        self.checkBoxURG = QtWidgets.QCheckBox(self.frame)
+        self.checkBoxURG.setObjectName("checkBoxURG")
+        self.gridLayout.addWidget(self.checkBoxURG, 0, 1, 1, 1)
+        self.frame_2 = QtWidgets.QFrame(Dialog)
+        self.frame_2.setGeometry(QtCore.QRect(150, 230, 217, 52))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.pushButtonOK = QtWidgets.QPushButton(self.frame_2)
+        self.pushButtonOK.setObjectName("pushButtonOK")
+        self.gridLayout_2.addWidget(self.pushButtonOK, 0, 0, 1, 1)
+        self.pushButtonCancel = QtWidgets.QPushButton(self.frame_2)
+        self.pushButtonCancel.setObjectName("pushButtonCancel")
+        self.gridLayout_2.addWidget(self.pushButtonCancel, 0, 1, 1, 1)
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.labelACK.setText(_translate("Dialog", "Acknowledge"))
+        self.labelPSH.setText(_translate("Dialog", "Push"))
+        self.labelRST.setText(_translate("Dialog", "Reset"))
+        self.labelURG.setText(_translate("Dialog", "Urgent"))
+        self.labelSYN.setText(_translate("Dialog", "Synchronize"))
+        self.labelFIN.setText(_translate("Dialog", "Finish"))
+        self.checkBoxPSH.setText(_translate("Dialog", "PSH"))
+        self.checkBoxSYN.setText(_translate("Dialog", "SYN"))
+        self.checkBoxFIN.setText(_translate("Dialog", "FIN"))
+        self.checkBoxRST.setText(_translate("Dialog", "RST"))
+        self.checkBoxACK.setText(_translate("Dialog", "ACK"))
+        self.checkBoxURG.setText(_translate("Dialog", "URG"))
+        self.pushButtonOK.setText(_translate("Dialog", "OK"))
+        self.pushButtonCancel.setText(_translate("Dialog", "Cancel"))
+
