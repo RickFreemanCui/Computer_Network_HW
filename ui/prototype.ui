@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1800</width>
-    <height>800</height>
+    <height>835</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,7 +53,14 @@
         </widget>
        </item>
        <item row="2" column="0" colspan="2">
-        <widget class="QListWidget" name="listWidgetPacketList"/>
+        <widget class="QListWidget" name="listWidgetPacketList">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -214,6 +221,12 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
          </property>
          <property name="currentIndex">
           <number>0</number>
@@ -600,7 +613,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>334</width>
+                <width>667</width>
                 <height>326</height>
                </rect>
               </property>
@@ -854,8 +867,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>318</width>
-                <height>151</height>
+                <width>688</width>
+                <height>202</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_5">
@@ -1006,7 +1019,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tabARP">
           <attribute name="title">
@@ -1026,7 +1039,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>429</width>
+                <width>667</width>
                 <height>328</height>
                </rect>
               </property>
@@ -1665,7 +1678,7 @@
         <widget class="QTextBrowser" name="textBrowserHexdump">
          <property name="minimumSize">
           <size>
-           <width>650</width>
+           <width>630</width>
            <height>0</height>
           </size>
          </property>
