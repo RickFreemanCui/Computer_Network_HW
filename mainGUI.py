@@ -7,6 +7,8 @@ from engine.TimeConvert import timeConvert
 from hexdump import hexdump as dump
 import sys, os
 
+# TODO: HANDLE invalid input
+
 class PacketInjector(QMainWindow):
     packetList = []
     currentIndex = -1 # no packet in the list
@@ -137,6 +139,7 @@ class PacketInjector(QMainWindow):
                 (self.ui.comboBoxIPVersion.currentIndexChanged, self.handleIPVersionComboIndexChanged),
                 (self.ui.comboBoxIPIhl.currentIndexChanged, self.handleIPIhlComboIndexChanged),
                 (self.ui.comboBoxIPTos.currentIndexChanged, self.handleIPTosComboIndexChanged),
+                (self.ui.comboBoxIPLength.currentIndexChanged, self.handleIPLenComboIndexChanged),
                 (self.ui.comboBoxIPId.currentIndexChanged, self.handleIPIdComboIndexChanged),
                 (self.ui.comboBoxIPFlags.currentIndexChanged, self.handleIPFlagsComboIndexChanged),
                 (self.ui.comboBoxIPFragment.currentIndexChanged, self.handleIPFragComboIndexChanged),
@@ -816,7 +819,14 @@ class PacketInjector(QMainWindow):
         p = self.packetList[self.currentIndex][IP]
         inputFlags = self.ui.lineEditIPFlags.text()
         if base2int(inputFlags) not in self.IPLine2Combo['flags'].keys():
-            print('invalid ip flags')
+            msg = QMessageBox(self)
+            ret = QMessageBox.warning(self, 'Invalid IP flag', 
+                'Valid value is 0-3, leaving that field unchanged.',
+                QMessageBox.Ok,
+                QMessageBox.Ok)
+            self.ui.lineEditIPFlags.setText(int2base(p.flags, 10))
+            self.handleIPFlagsEditingFinish()
+            return
         else:
             p.flags = base2int(inputFlags)
             ind = self.IPLine2Combo['flags'][p.flags]
@@ -967,6 +977,7 @@ class PacketInjector(QMainWindow):
             self.ui.lineEditIPChecksum.setText(self.IPCombo2Line['chksum'][inputIndex])
             if self.IPCombo2Line['chksum'][inputIndex] == 'auto':
                 p.chksum = None
+                self.ui.lineEditIPChksum.setText('auto')
             else:
                 # no other option here
                 pass
