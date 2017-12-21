@@ -1,7 +1,9 @@
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
 from scapy.all import *
 from ui.ui_prototype import Ui_MainWindow
 from TCPDialog import TCPFlagsDialog
+from IfaceDialog import IfaceDialog
 from engine.BaseN import int2base, base2int
 from engine.TimeConvert import timeConvert
 from hexdump import hexdump as dump
@@ -79,9 +81,67 @@ class PacketInjector(QMainWindow):
         super(PacketInjector, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setWindowTitle('Packet Injector')
+        self.center()
+        self.addMenuBar()
+        self.addTip()
         self.doConnect()
         self.addInitPacket()
+
+    def addTip(self):
+        self.ui.pushButtonAddPacket.setStatusTip('Add a link-layer packet to packet list')
+        self.ui.pushButtonDeletePacket.setStatusTip('Delete the current packet')
+        self.ui.pushButtonSend.setStatusTip('Send the current packet from selected interface (%s)' % self.getCurrentIface())
+        self.ui.pushButtonWritePCAP.setStatusTip('Write current packet list to a pcap file')
+        self.ui.textBrowserHexdump.setStatusTip('Hexdump of current packet')
+        self.ui.listWidgetPacketList.setStatusTip('Current packet list')
+        self.ui.tabWidgetEther.setStatusTip('Link layer options')
+        self.ui.tabWidgetARPIP.setStatusTip('ARP or IP options, None means no payload')
+        self.ui.tabWidgetICMPTCPUDP.setStatusTip('ICMP, TCP, or UDP options, None means no payload')
+
+    def center(self):
+        fg = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        fg.moveCenter(cp)
+        self.move(fg.topLeft())
+    
+    def addMenuBar(self):
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu('file')
+        configMenu = mainMenu.addMenu('config')
+
+        saveButton = QAction(QIcon('save.png'), 'Save', self)
+        saveButton.setStatusTip('Save current packet list to a pcap file')
+        saveButton.triggered.connect(self.handleWritePCAPClicked)
+        fileMenu.addAction(saveButton)
         
+        exitButton = QAction(QIcon('exit.png'), 'Exit', self)
+        exitButton.setStatusTip('Exit application')
+        exitButton.triggered.connect(self.close)
+        fileMenu.addAction(exitButton)
+
+        ifaceSelectButton = QAction(QIcon(''), 'Select Interface', self)
+        ifaceSelectButton.setStatusTip('Select a network interface to send packet from')
+        ifaceSelectButton.triggered.connect(self.handleIfaceSelect)
+        configMenu.addAction(ifaceSelectButton)
+    
+    def handleIfaceSelect(self):
+        diag = IfaceDialog(self)
+        diag.show()
+        diag.exec_()
+    
+    def getIfaceList(self):
+        l = []
+        for i in ifaces.keys():
+            l.append(i)
+        return l
+
+    def setCurrentIface(self, ifaceName):
+        conf.iface = ifaceName
+
+    def getCurrentIface(self):
+        return conf.iface
+
     def addInitPacket(self):
         self.handleAddPacketClicked()
 
@@ -418,7 +478,7 @@ class PacketInjector(QMainWindow):
             resultStr += 'SYN+'
             flags -= 2
         if flags >= 1:
-            resultStr += 'FIN'
+            resultStr += 'FIN+'
             flags -= 1
         if len(resultStr) > 0:
             resultStr = resultStr[: -1]
